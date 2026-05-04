@@ -35,7 +35,7 @@ const Hero = () => {
             variants={itemVariants}
             className="font-display text-5xl md:text-7xl font-black mb-6 leading-tight"
           >
-            <span className="text-gray-200">YaratıcılSSSASSSığı </span>
+            <span className="text-gray-200">YASSSSaratıcılSSSASSSığı </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-crimson to-gold">
               Hareket
             </span>
