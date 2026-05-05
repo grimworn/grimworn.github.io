@@ -50,7 +50,7 @@ export default function Scene3D() {
     scene.add(rimLight)
 
      const rimLight2 = new THREE.DirectionalLight(0xb3121b, 5)
-    rimLight2.position.set(-2, -1, -3)
+    rimLight2.position.set(-2, -1, -2)
     scene.add(rimLight2)
 
     let raven = null
