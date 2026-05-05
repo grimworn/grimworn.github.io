@@ -68,35 +68,34 @@ export default function Home() {
 
 <section id="work" className="work-section">
   <div className="work-shell">
-    <div className="work-head">
-      <h2 className="work-title">Work</h2>
-      <p className="work-copy">
-        Motion pieces, product visuals, and campaign films with enough atmosphere to stand out and enough clarity to sell the idea.
-      </p>
-    </div>
- <div className="work-grid">
-      <a className="work-card is-featured" href="#">
-      <div className="work-media work-media--video">
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="metadata"
-    controls={false}
-  >
-    <source src="/videos/koffdark.mp4" type="video/mp4" />
-  </video>
-</div>
+    <div className="section-box work-box">
+      <div className="work-head">
+        <h2 className="work-title">Work</h2>
+        <p className="work-copy">
+          Motion pieces, product visuals, and campaign films with enough atmosphere to stand out and enough clarity to sell the idea.
+        </p>
+      </div>
+      <div className="work-grid">
+        <a className="work-card is-featured" href="#">
+          <div className="work-media work-media--video">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              controls={false}
+            >
+              <source src="/videos/koffdark.mp4" type="video/mp4" />
+            </video>
+          </div>
 
-
-        <div className="work-card-content">
-          
-
-          <h3>KOFFDARK</h3>
-          <p>A motion-led brand piece built with atmosphere, contrast, and a premium sense of control.</p>
+          <div className="work-card-content">
+            <h3>KOFFDARK</h3>
+            <p>A motion-led brand piece built with atmosphere, contrast, and a premium sense of control.</p>
+          </div>
+        </a>
         </div>
-      </a>
     </div>
    
   </div>
@@ -106,7 +105,8 @@ export default function Home() {
 
      <section id="studio" className="studio-section">
   <div className="studio-shell">
-    <div className="studio-head">
+    <div className="section-box studio-box">
+      <div className="studio-head">
         <span className="studio-kicker">Studio</span>
         <h2 className="studio-title">Process</h2>
         <p className="studio-text">
@@ -115,7 +115,7 @@ export default function Home() {
         <p className="studio-text">
           AI is not the core of the work. It is used only in rare support moments; the direction, motion, look, and final craft stay human-made and controlled.
         </p>
-    </div>
+      </div>
 
       <div className="studio-process">
         <div className="studio-panel">
@@ -134,6 +134,7 @@ export default function Home() {
           </p>
         </div>
       </div>
+    </div>
   </div>
 </section>
 

@@ -264,6 +264,41 @@ p{color:var(--muted);line-height:1.65}
 }
 .btn-secondary{background:rgba(255,255,255,.03)}
 
+.section-box{
+  position:relative;
+  overflow:hidden;
+  padding:1.7rem;
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.018));
+  box-shadow:0 22px 68px rgba(0,0,0,.24);
+}
+.section-box::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:radial-gradient(circle at 50% 0%,#000 8%,transparent 68%);
+}
+.section-box > *{
+  position:relative;
+  z-index:1;
+}
+.work-box{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(196,24,31,.11),transparent 36%),
+    linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.018));
+}
+.studio-box{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(196,24,31,.14),transparent 38%),
+    linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.024));
+}
+
 /* Hero */
 .hero-section{
   padding:2rem 0 1rem;
@@ -364,7 +399,7 @@ p{color:var(--muted);line-height:1.65}
 .band.accent{background:linear-gradient(180deg,rgba(126,31,35,.22),rgba(255,255,255,.025))}
 
 /* Work */
-.work-section{position:relative;z-index:2;padding:4.5rem 0}
+.work-section{position:relative;z-index:2;padding:4.5rem 0 2.5rem}
 .work-shell{width:min(1180px,calc(100% - 2rem));margin:0 auto}
 .work-head{
   display:grid;
@@ -442,7 +477,11 @@ p{color:var(--muted);line-height:1.65}
 }
 
 /* Studio */
-.studio-section{position:relative;z-index:2;padding:3.5rem 0}
+.studio-section{
+  position:relative;
+  z-index:2;
+  padding:2rem 0 2.5rem;
+}
 .studio-shell{width:min(1180px,calc(100% - 2rem));margin:0 auto}
 .studio-grid,
 .studio-process{
@@ -452,6 +491,8 @@ p{color:var(--muted);line-height:1.65}
   align-items:stretch;
 }
 .studio-head{
+  position:relative;
+  z-index:1;
   display:grid;
   justify-items:center;
   gap:.8rem;
@@ -463,7 +504,7 @@ p{color:var(--muted);line-height:1.65}
 .studio-panel{
   border:1px solid var(--line);
   border-radius:var(--radius-lg);
-  background:rgba(255,255,255,.025);
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.026));
 }
 .studio-copy{padding:1.7rem}
 .studio-kicker,
@@ -489,10 +530,13 @@ p{color:var(--muted);line-height:1.65}
 }
 .studio-side{display:grid;gap:1rem}
 .studio-panel{
+  position:relative;
+  z-index:1;
   min-height:100%;
   padding:1.35rem;
   display:flex;
   flex-direction:column;
+  box-shadow:0 22px 68px rgba(0,0,0,.24);
 }
 .studio-panel h3{
   margin:0 0 .8rem;
@@ -527,7 +571,7 @@ p{color:var(--muted);line-height:1.65}
 .studio-panel .studio-note{margin-top:auto}
 
 /* Contact */
-.contact-section{position:relative;z-index:2;padding:3.5rem 0 5rem}
+.contact-section{position:relative;z-index:2;padding:2.5rem 0 4rem}
 .contact-shell{width:min(1180px,calc(100% - 2rem));margin:0 auto}
 .contact-box{
   position:relative;
@@ -804,6 +848,7 @@ p{color:var(--muted);line-height:1.65}
 
   .stacked-band{padding:1rem 0 2rem}
   .band,
+  .section-box,
   .studio-copy,
   .studio-panel,
   .contact-box,
@@ -823,8 +868,8 @@ p{color:var(--muted);line-height:1.65}
   .section-copy h2{max-width:none;font-size:clamp(1.7rem,8vw,2.35rem)}
 
   .work-section,
-  .studio-section{padding:2.5rem 0}
-  .contact-section{padding:2.5rem 0 4rem}
+  .studio-section{padding:2rem 0}
+  .contact-section{padding:2rem 0 3rem}
   .work-title{font-size:clamp(2rem,10vw,3rem)}
   .work-card{padding:.85rem;border-radius:1.2rem}
   .work-card h3{font-size:1.45rem}
