@@ -1,22 +1,21 @@
 
-import { Link } from 'react-router-dom'
 import Scene3D from '../components/Scene3D'
 
 const services = [
   {
-    title: 'Creative Direction',
-    text: 'Narrative systems for launches, channels, and premium creator brands that need a sharper point of view.',
-    points: ['Moodboards & references', 'Art direction', 'Launch visuals'],
+    title: 'Motion Direction',
+    text: 'The visual rhythm of a campaign: pacing, frames, transitions, and the feeling that holds the piece together.',
+    points: ['Treatments', 'Frame direction', 'Motion language'],
   },
   {
-    title: '3D Motion Systems',
-    text: 'Dark cinematic sequences, product scenes, logo reveals, and stylized environments with controlled tension.',
-    points: ['3D loops', 'Hero scenes', 'Motion packages'],
+    title: 'CGI & Product Visuals',
+    text: 'Stylized product moments, impossible camera moves, atmospheric scenes, and 3D details built to make the offer feel premium.',
+    points: ['CGI scenes', 'Product shots', 'Look development'],
   },
   {
-    title: 'Edit & Packaging',
-    text: 'Tighter edits, stronger intros, title systems, overlays, and visual pacing designed for social-native attention.',
-    points: ['Short-form edits', 'Title design', 'Episode packaging'],
+    title: 'Brand Films',
+    text: 'Short films, launch edits, and screen-native assets shaped for campaigns, social rollouts, and brand moments.',
+    points: ['Launch films', 'Social cuts', 'Campaign assets'],
   },
 ]
 
@@ -31,7 +30,7 @@ const projects = [
     slug: 'ashen-frame',
     title: 'Ashen Frame',
     type: 'Creator Identity',
-    summary: 'A creator rebrand with dark interface language, restrained type, and impact-first motion assets.',
+    summary: 'A creator identity with high-contrast interface language, restrained type, and impact-first motion assets.',
   },
   {
     slug: 'scarlet-signal',
@@ -46,16 +45,15 @@ export default function Home() {
     <main>
       <section className="hero-section container hero-grid">
         <div className="hero-copy">
-          <p className="eyebrow mono">Visual worlds for launches, brands, and ambitious ideas.</p>
-          <h1>We shape ideas into motion.</h1>
-          <p className="lead">Grimworn develops animations, motion systems, and brand visuals for launches,
-    campaigns, and ideas that need to look clear, distinctive, and professionally built.</p>
+          <p className="eyebrow mono">Motion design, CGI, and campaign visuals</p>
+          <h1>Make the thing worth watching.</h1>
+          <p className="lead">Grimworn creates motion-led brand films, product visuals, and launch assets for ideas that need a sharper presence on screen.</p>
           <div className="hero-actions">
           </div>
           <div className="hero-meta">
-            <span>3D animation</span>
-            <span>Motion design</span>
-            <span>Visual direction</span>
+            <span>Motion direction</span>
+            <span>CGI visuals</span>
+            <span>Brand films</span>
           </div>
         </div>
         <div className="hero-stage">
@@ -64,27 +62,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container stacked-band">
-        <article className="band large">
-          <span className="mono small">Approach</span>
-          <h2>Good motion starts before animation.</h2>
-          <p>Strong visual work comes from clear thinking: references, timing,
-      composition, and form all need to align before the final frame does.</p>
-        </article>
-        <article className="band accent">
-          <span className="mono small">Focus</span>
-          <h3>Built to communicate, not just decorate.</h3>
-          <p>The goal is not to make things look busy. It is to create motion and visuals
-      that carry an idea clearly and leave a stronger impression.</p>
-        </article>
-      </section>
-
 <section id="work" className="work-section">
   <div className="work-shell">
     <div className="work-head">
       <h2 className="work-title">Work</h2>
       <p className="work-copy">
-        Digital worlds, cinematic interfaces, and brand systems built to feel sharp and memorable.
+        Motion pieces, product visuals, and campaign films with enough atmosphere to stand out and enough clarity to sell the idea.
       </p>
     </div>
  <div className="work-grid">
@@ -107,7 +90,7 @@ export default function Home() {
           
 
           <h3>KOFFDARK</h3>
-          <p>Identity, motion language, and visual system built to feel ritualistic, premium, and sharp.</p>
+          <p>A motion-led brand piece built with atmosphere, contrast, and a premium sense of control.</p>
         </div>
       </a>
     </div>
@@ -119,38 +102,34 @@ export default function Home() {
 
      <section id="studio" className="studio-section">
   <div className="studio-shell">
-    <div className="studio-grid">
-      <div className="studio-copy">
+    <div className="studio-head">
         <span className="studio-kicker">Studio</span>
-        <h2 className="studio-title">Built for darker digital work.</h2>
+        <h2 className="studio-title">How we work</h2>
         <p className="studio-text">
-          Grimworn creates identity systems, motion visuals, and web experiences with a colder,
-          sharper, more deliberate visual language.
+          Grimworn works between motion design, CGI, and visual direction to shape brand films and campaign assets with a controlled cinematic edge.
         </p>
         <p className="studio-text">
-          The focus is simple: fewer elements, stronger silhouettes, and a more controlled atmosphere.
+          AI is used lightly for exploration and speed. The final image still comes from human direction, taste, timing, and frame-by-frame control.
         </p>
-      </div>
+    </div>
 
-      <div className="studio-side">
-        <div className="studio-panel">
-          <span className="studio-label">Focus</span>
-          <ul className="studio-list">
-            <li>Brand identity</li>
-            <li>3D direction</li>
-            <li>Motion design</li>
-            <li>Creative websites</li>
-          </ul>
-        </div>
-
+      <div className="studio-process">
         <div className="studio-panel">
           <span className="studio-label">Approach</span>
+          <h3>Find the signal.</h3>
           <p className="studio-note">
-            Minimal structure, cinematic mood, and visuals shaped to stay clean on both desktop and mobile.
+            Before production, we define what the piece needs to make people feel, notice, and remember. The visual style comes after the purpose is clear.
+          </p>
+        </div>
+
+        <div className="studio-panel accent">
+          <span className="studio-label">Output</span>
+          <h3>Shape the screen.</h3>
+          <p className="studio-note">
+            We shape motion-led assets that can live across campaign films, product teasers, social cuts, and presentation moments without losing their visual identity.
           </p>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -159,32 +138,32 @@ export default function Home() {
     <div className="contact-box">
       <div className="contact-top">
         <span className="contact-kicker">Contact</span>
-        <h2 className="contact-title">Let’s talk.</h2>
+        <h2 className="contact-title">Have something to launch?</h2>
         <p className="contact-text">
-          For identity, motion, 3D direction, or launch visuals, get in touch with a short brief.
+          Send the product, the mood, and the moment you want people to remember. We'll shape it into a sharper moving piece.
         </p>
       </div>
 
       <div className="contact-cards">
         <a className="contact-card" href="mailto:hello@grimworn.com">
-          <span className="contact-label">Email</span>
+          <span className="contact-label">Start here</span>
           <strong className="contact-value">hello@grimworn.com</strong>
-          <span className="contact-sub">Best for project inquiries and collaborations.</span>
+          <span className="contact-sub">Send a short brief, rough references, or the spark of an idea.</span>
         </a>
 
         <div className="contact-card">
-          <span className="contact-label">Elsewhere</span>
+          <span className="contact-label">Good fit</span>
           <div className="contact-links">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://behance.net" target="_blank" rel="noreferrer">Behance</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            <span>Launch films</span>
+            <span>CGI visuals</span>
+            <span>Motion direction</span>
           </div>
         </div>
 
         <div className="contact-card">
-          <span className="contact-label">Availability</span>
+          <span className="contact-label">Response</span>
           <span className="contact-sub">
-            Open for selected freelance work, identity systems, and darker digital launches.
+            If the brief fits, we'll reply with a direction, possible scope, and the next step.
           </span>
         </div>
       </div>

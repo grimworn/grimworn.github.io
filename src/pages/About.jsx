@@ -3,19 +3,19 @@ import PageShell from '../components/PageShell'
 
 export default function About() {
   return (
-    <PageShell eyebrow="About" title="Founder-led, internet-literate, visually stubborn." text="Grimworn is positioned like a small studio with taste: fewer projects, more intent, and stronger control over the final frame.">
+    <PageShell eyebrow="About" title="Cinematic motion with a sharper point of view." text="Grimworn creates motion-led visuals, CGI moments, and brand films for ideas that need stronger presence on screen.">
       <div className="about-layout">
         <article className="about-card wide">
-          <h3>What this version fixes</h3>
-          <p>The earlier site was a single long page with one visual tempo. This direction adds route-based separation, more layered composition, richer visual hierarchy, and a stronger brand color story.</p>
+          <h3>What we care about</h3>
+          <p>Work should have atmosphere, but it still needs to carry the idea. The best result is sharp enough to be remembered and clear enough to make the product or brand land.</p>
         </article>
         <article className="about-card">
-          <h3>Brand cue</h3>
-          <p>Red raven energy: severe, memorable, premium, rebellious.</p>
+          <h3>Studio character</h3>
+          <p>Run by two brothers, but built like a focused creative partner: cinematic, high-contrast, disciplined, and never trapped inside one niche.</p>
         </article>
         <article className="about-card">
-          <h3>Build stack</h3>
-          <p>React, React Router, Vite, and Three.js for the lightweight 3D hero layer.</p>
+          <h3>How we work</h3>
+          <p>Direction first, then production. AI is used lightly for exploration, while final frames stay driven by human taste, timing, and control.</p>
         </article>
       </div>
     </PageShell>

@@ -18,9 +18,9 @@ export default function Scene3D() {
       100
     )
 
-    // KAMERAYI BURADAN SEN YÖNET
-    camera.position.set(0.5, 1.2, 4)
-    camera.lookAt(0, 0, 0)
+    // Manual camera control. Keep this stable across breakpoints.
+    camera.position.set(0.5,1, 4.5)
+    camera.lookAt(-0.5, 0, 0)
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -79,7 +79,7 @@ export default function Scene3D() {
         raven.scale.setScalar(scale)
 
         raven.position.y = -0.2
-        raven.position.x = 0.5
+        raven.position.x = 0
         raven.rotation.y = 1
 
         raven.traverse((child) => {
@@ -113,8 +113,8 @@ export default function Scene3D() {
       const elapsed = clock.getElapsedTime()
       const delta = clock.getDelta()
 
-      root.rotation.y = Math.sin(elapsed * 0.28) * 0.08
-      root.position.y = Math.sin(elapsed * 0.85) * 0.03
+      root.rotation.y = Math.sin(elapsed * 0.8) * 0.08
+      root.position.y = Math.sin(elapsed * 1) * 0.03
 
       if (raven) {
         raven.rotation.z = Math.sin(elapsed * 0.7) * 0.012

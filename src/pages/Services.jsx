@@ -3,25 +3,25 @@ import PageShell from '../components/PageShell'
 
 const services = [
   {
-    title: '3D Animation',
-    text: 'Designed sequences, product visuals, and stylized motion built with attention to form, lighting, and timing.',
-    points: ['Product films', 'Loop scenes', 'Animated visuals'],
+    title: 'Motion Direction',
+    text: 'The rhythm, structure, and visual language of a moving piece before it becomes production.',
+    points: ['Treatments', 'Frame direction', 'Motion language'],
   },
   {
-    title: 'Motion Design',
-    text: 'Titles, transitions, and motion systems that give campaigns, content, and launches a clearer visual rhythm.',
-    points: ['Title sequences', 'Promos', 'Motion systems'],
+    title: 'CGI & Product Visuals',
+    text: 'Stylized product shots, atmospheric scenes, and 3D details made for launches, campaigns, and screen-first brand moments.',
+    points: ['Product visuals', 'CGI scenes', 'Look development'],
   },
   {
-    title: 'Art Direction',
-    text: 'References, visual development, and aesthetic decisions that shape a more coherent final result from the start.',
-    points: ['Look development', 'Frame direction', 'Visual consistency'],
+    title: 'Brand Films',
+    text: 'Short-form films, launch edits, and social cuts that make a brand or product feel more memorable on screen.',
+    points: ['Launch films', 'Social cuts', 'Campaign assets'],
   },
 ]
 
 export default function Services() {
   return (
-    <PageShell eyebrow="Services" title="A smaller menu, built deeper." text="Each service is designed to connect strategy, visuals, and output instead of selling disconnected deliverables.">
+    <PageShell eyebrow="Services" title="Motion-led work with a clear job to do." text="Grimworn connects direction, CGI, and production so each piece feels distinctive without becoming vague or overbuilt.">
       <div className="masonry-grid">
         {services.map(service => (
           <article className="detail-card" key={service.title}>

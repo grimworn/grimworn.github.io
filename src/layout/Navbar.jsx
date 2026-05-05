@@ -5,9 +5,24 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
+  const announcement = 'Founding offer: free collaboration spots for selected launch films, CGI visuals, and motion-led brand pieces.'
 
   return (
     <header className="site-header">
+      <div className="announce-bar" aria-label={announcement}>
+        <div className="announce-track" aria-hidden="true">
+          <div className="announce-group">
+            <span>{announcement}</span>
+            <span>{announcement}</span>
+            <span>{announcement}</span>
+          </div>
+          <div className="announce-group">
+            <span>{announcement}</span>
+            <span>{announcement}</span>
+            <span>{announcement}</span>
+          </div>
+        </div>
+      </div>
       <div className="container nav-wrap">
         <Link to="/" className="brand" onClick={closeMenu}>
           <svg className="brand-mark" viewBox="0 0 64 64" aria-label="Grimworn logo" fill="none">
