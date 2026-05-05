@@ -79,114 +79,119 @@ export default function Home() {
         </article>
       </section>
 
-<section className="home-section work-section" id="work">
-  <div className="container section-head">
-    <p className="eyebrow">Work</p>
-    <h2>Selected motion worlds and visual studies.</h2>
-    <p className="section-text">
-      A growing body of self-initiated work, brand atmospheres, and motion-led
-      visual experiments.
-    </p>
+<section id="work" className="work-section">
+  <div className="work-shell">
+    <div className="work-head">
+      <h2 className="work-title">Work</h2>
+      <p className="work-copy">
+        Digital worlds, cinematic interfaces, and brand systems built to feel sharp and memorable.
+      </p>
+    </div>
+ <div className="work-grid">
+      <a className="work-card is-featured" href="#">
+      <div className="work-media work-media--video">
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    controls={false}
+  >
+    <source src="/videos/koffdark.mp4" type="video/mp4" />
+  </video>
+</div>
+
+
+        <div className="work-card-content">
+          
+
+          <h3>KOFFDARK</h3>
+          <p>Identity, motion language, and visual system built to feel ritualistic, premium, and sharp.</p>
+        </div>
+      </a>
+    </div>
+   
   </div>
 
-  <div className="container work-showcase">
-    <article className="featured-work">
-      <div className="featured-work-media placeholder-panel">
-        <span>Koffdark Preview</span>
-      </div>
+  
+</section>
 
-      <div className="featured-work-copy">
-        <p className="work-type">Featured / Spec Brand Film</p>
-        <h3>Koffdark</h3>
-        <p>
-          A self-initiated coffee brand project focused on darker packaging,
-          stronger tone, and a cinematic promo direction.
+     <section id="studio" className="studio-section">
+  <div className="studio-shell">
+    <div className="studio-grid">
+      <div className="studio-copy">
+        <span className="studio-kicker">Studio</span>
+        <h2 className="studio-title">Built for darker digital work.</h2>
+        <p className="studio-text">
+          Grimworn creates identity systems, motion visuals, and web experiences with a colder,
+          sharper, more deliberate visual language.
         </p>
-
-        <ul className="work-tags">
-          <li>3D Motion</li>
-          <li>Packaging</li>
-          <li>Brand Direction</li>
-        </ul>
+        <p className="studio-text">
+          The focus is simple: fewer elements, stronger silhouettes, and a more controlled atmosphere.
+        </p>
       </div>
-    </article>
+
+      <div className="studio-side">
+        <div className="studio-panel">
+          <span className="studio-label">Focus</span>
+          <ul className="studio-list">
+            <li>Brand identity</li>
+            <li>3D direction</li>
+            <li>Motion design</li>
+            <li>Creative websites</li>
+          </ul>
+        </div>
+
+        <div className="studio-panel">
+          <span className="studio-label">Approach</span>
+          <p className="studio-note">
+            Minimal structure, cinematic mood, and visuals shaped to stay clean on both desktop and mobile.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-     
+<section id="contact" className="contact-section">
+  <div className="contact-shell">
+    <div className="contact-box">
+      <div className="contact-top">
+        <span className="contact-kicker">Contact</span>
+        <h2 className="contact-title">Let’s talk.</h2>
+        <p className="contact-text">
+          For identity, motion, 3D direction, or launch visuals, get in touch with a short brief.
+        </p>
+      </div>
 
-      <section className="home-section studio-section" id="studio">
-        <div className="container studio-grid">
-          <div className="studio-copy">
-            <p className="eyebrow">Studio</p>
-            <h2>A motion-led practice built around tone, tension, and presence.</h2>
-            <p className="section-text">
-              Grimworn focuses on 3D motion, visual development, and brand
-              storytelling with a darker and more cinematic edge. The goal is
-              not just to make things look polished, but to give them weight,
-              mood, and identity.
-            </p>
-          </div>
+      <div className="contact-cards">
+        <a className="contact-card" href="mailto:hello@grimworn.com">
+          <span className="contact-label">Email</span>
+          <strong className="contact-value">hello@grimworn.com</strong>
+          <span className="contact-sub">Best for project inquiries and collaborations.</span>
+        </a>
 
-          <div className="studio-panels">
-            <article className="info-card">
-              <span className="info-label">Focus</span>
-              <h3>What the studio does.</h3>
-              <p>
-                3D motion design, visual direction, brand films, concept-driven
-                identity work, and selected digital atmospheres.
-              </p>
-            </article>
-
-            <article className="info-card">
-              <span className="info-label">Approach</span>
-              <h3>How the work is shaped.</h3>
-              <p>
-                Each project begins with tone and visual language, then expands
-                into motion, composition, texture, and a world that feels
-                singular.
-              </p>
-            </article>
-
-            <article className="info-card">
-              <span className="info-label">Stage</span>
-              <h3>First chapter, carefully built.</h3>
-              <p>
-                Grimworn is currently shaping its first wave of collaborations
-                and building a sharp, selective body of work.
-              </p>
-            </article>
+        <div className="contact-card">
+          <span className="contact-label">Elsewhere</span>
+          <div className="contact-links">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://behance.net" target="_blank" rel="noreferrer">Behance</a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
-      </section>
 
-      <section className="home-section contact-section" id="contact">
-        <div className="container contact-block">
-          <p className="eyebrow">Contact</p>
-          <h2>Have a brand, product, or idea that needs a stronger visual world?</h2>
-          <p className="section-text">
-            If the fit is right, Grimworn is open to selected collaborations in
-            motion, 3D visuals, and identity-led creative work.
-          </p>
-
-          <div className="contact-actions">
-            <a
-              href="mailto:hello@grimworn.com?subject=Project inquiry"
-              className="btn btn-primary"
-            >
-              hello@grimworn.com
-            </a>
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary"
-            >
-              Instagram
-            </a>
-          </div>
+        <div className="contact-card">
+          <span className="contact-label">Availability</span>
+          <span className="contact-sub">
+            Open for selected freelance work, identity systems, and darker digital launches.
+          </span>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
     </main>
   )
 }
