@@ -21,7 +21,7 @@ const services = [
 
 export default function Services() {
   return (
-    <PageShell eyebrow="Services" title="Motion-led work with a clear job to do." text="Grimworn connects direction, CGI, and production so each piece feels distinctive without becoming vague or overbuilt.">
+    <PageShell eyebrow="Services" title="Services" text="Direction, CGI, and production for motion-led brand pieces.">
       <div className="masonry-grid">
         {services.map(service => (
           <article className="detail-card" key={service.title}>

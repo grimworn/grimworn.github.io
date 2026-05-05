@@ -1,15 +1,26 @@
-
-import { Link } from 'react-router-dom'
-
 export default function Footer() {
+  const year = new Date().getFullYear()
+
   return (
     <footer className="site-footer">
-      <div className="container footer-grid">
-        <div>
-          <p className="eyebrow mono">Grimworn Creative</p>
+      <div className="container footer-shell">
+        <div className="footer-main">
+          <div className="footer-brand">
+            <p className="eyebrow mono">Grimworn Creative</p>
+            <p>Motion design, CGI visuals, and campaign films.</p>
+          </div>
+
+          <div className="footer-links">
+            <a href="#work">Work</a>
+            <a href="#studio">Process</a>
+            <a href="#contact">Contact</a>
+            <a href="mailto:hello@grimworn.com">hello@grimworn.com</a>
+          </div>
         </div>
-        <div className="footer-links">
-          
+
+        <div className="footer-bottom">
+          <span>(c) {year} Grimworn</span>
+          <span>Make the thing worth watching.</span>
         </div>
       </div>
     </footer>

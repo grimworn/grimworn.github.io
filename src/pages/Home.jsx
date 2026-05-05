@@ -46,7 +46,11 @@ export default function Home() {
       <section className="hero-section container hero-grid">
         <div className="hero-copy">
           <p className="eyebrow mono">Motion design, CGI, and campaign visuals</p>
-          <h1>Make the thing worth watching.</h1>
+          <h1>
+            <span>Built outside the system.</span>
+            <span>Against the grain.</span>
+            <span>On purpose.</span>
+          </h1>
           <p className="lead">Grimworn creates motion-led brand films, product visuals, and launch assets for ideas that need a sharper presence on screen.</p>
           <div className="hero-actions">
           </div>
@@ -104,27 +108,27 @@ export default function Home() {
   <div className="studio-shell">
     <div className="studio-head">
         <span className="studio-kicker">Studio</span>
-        <h2 className="studio-title">How we work</h2>
+        <h2 className="studio-title">Process</h2>
         <p className="studio-text">
           Grimworn works between motion design, CGI, and visual direction to shape brand films and campaign assets with a controlled cinematic edge.
         </p>
         <p className="studio-text">
-          AI is used lightly for exploration and speed. The final image still comes from human direction, taste, timing, and frame-by-frame control.
+          AI is not the core of the work. It is used only in rare support moments; the direction, motion, look, and final craft stay human-made and controlled.
         </p>
     </div>
 
       <div className="studio-process">
         <div className="studio-panel">
           <span className="studio-label">Approach</span>
-          <h3>Find the signal.</h3>
+          <h3>Direction</h3>
           <p className="studio-note">
             Before production, we define what the piece needs to make people feel, notice, and remember. The visual style comes after the purpose is clear.
           </p>
         </div>
 
-        <div className="studio-panel accent">
+        <div className="studio-panel">
           <span className="studio-label">Output</span>
-          <h3>Shape the screen.</h3>
+          <h3>Production</h3>
           <p className="studio-note">
             We shape motion-led assets that can live across campaign films, product teasers, social cuts, and presentation moments without losing their visual identity.
           </p>
@@ -138,32 +142,34 @@ export default function Home() {
     <div className="contact-box">
       <div className="contact-top">
         <span className="contact-kicker">Contact</span>
-        <h2 className="contact-title">Have something to launch?</h2>
+        <h2 className="contact-title">Start a brief</h2>
         <p className="contact-text">
-          Send the product, the mood, and the moment you want people to remember. We'll shape it into a sharper moving piece.
+          Send the product, the mood, and the moment people should remember. We'll shape it into motion with atmosphere, clarity, and a stronger reason to be watched.
         </p>
+        <a className="contact-mainlink" href="mailto:hello@grimworn.com">
+          hello@grimworn.com
+          <span>Start a brief</span>
+        </a>
       </div>
 
       <div className="contact-cards">
-        <a className="contact-card" href="mailto:hello@grimworn.com">
-          <span className="contact-label">Start here</span>
-          <strong className="contact-value">hello@grimworn.com</strong>
-          <span className="contact-sub">Send a short brief, rough references, or the spark of an idea.</span>
-        </a>
-
         <div className="contact-card">
-          <span className="contact-label">Good fit</span>
-          <div className="contact-links">
-            <span>Launch films</span>
-            <span>CGI visuals</span>
-            <span>Motion direction</span>
-          </div>
+          <span className="contact-label">Send</span>
+          <strong className="contact-value">Product, goal, references</strong>
+          <span className="contact-sub">A few links, a rough direction, or the feeling the piece needs to carry.</span>
         </div>
 
         <div className="contact-card">
-          <span className="contact-label">Response</span>
+          <span className="contact-label">Built for</span>
+          <strong className="contact-value">Launch films, CGI, motion</strong>
+          <span className="contact-sub">Campaign assets, product visuals, social cuts, and atmospheric brand pieces.</span>
+        </div>
+
+        <div className="contact-card">
+          <span className="contact-label">Next</span>
+          <strong className="contact-value">Direction, scope, step</strong>
           <span className="contact-sub">
-            If the brief fits, we'll reply with a direction, possible scope, and the next step.
+            If the brief fits, we'll come back with a clear direction and the cleanest way forward.
           </span>
         </div>
       </div>

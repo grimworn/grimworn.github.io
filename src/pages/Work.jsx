@@ -9,7 +9,7 @@ const projects = [
 
 export default function Work() {
   return (
-    <PageShell eyebrow="Work" title="Frames with a reason to exist." text="Selected motion pieces, campaign films, and product-led visuals built to carry an idea clearly and make it harder to ignore.">
+    <PageShell eyebrow="Work" title="Selected work" text="Motion pieces, campaign films, and product-led visuals built to carry an idea clearly.">
       <div className="case-grid">
         {projects.map(project => (
           <article className="case-card" key={project.slug}>

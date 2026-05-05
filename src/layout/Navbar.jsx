@@ -5,6 +5,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
+  const scrollToTop = () => {
+    closeMenu()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
   const announcement = 'Founding offer: free collaboration spots for selected launch films, CGI visuals, and motion-led brand pieces.'
 
   return (
@@ -24,7 +28,7 @@ export default function Navbar() {
         </div>
       </div>
       <div className="container nav-wrap">
-        <Link to="/" className="brand" onClick={closeMenu}>
+        <Link to="/" className="brand" onClick={scrollToTop}>
           <svg className="brand-mark" viewBox="0 0 64 64" aria-label="Grimworn logo" fill="none">
             <path d="M12 44L32 10L52 44L32 34L12 44Z" stroke="currentColor" strokeWidth="3" />
             <path d="M24 36L32 22L40 36" stroke="currentColor" strokeWidth="3" />
