@@ -11,18 +11,16 @@ export default function Navbar() {
             <path d="M24 36L32 22L40 36" stroke="currentColor" strokeWidth="3"/>
           </svg>
           <div>
-            <span className="brand-top mono">Red raven studio</span>
-            <strong>GRIMWORN.CREATIVE</strong>
+            <strong>GRIMWORN</strong>
+            <span className="brand-top mono">CREATIVE</span>
           </div>
         </Link>
         <nav className="nav-links" aria-label="Main navigation">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/services">Services</NavLink>
-          <NavLink to="/work">Work</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </nav>
-        <Link to="/contact" className="header-cta">Start a project</Link>
       </div>
     </header>
   )
