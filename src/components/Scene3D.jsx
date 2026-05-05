@@ -12,78 +12,94 @@ export default function Scene3D() {
     const scene = new THREE.Scene()
 
     const camera = new THREE.PerspectiveCamera(
-      38,
+      30,
       mount.clientWidth / mount.clientHeight,
       0.1,
       100
     )
-    camera.position.set(0, -1, 6)
+
+    // KAMERAYI BURADAN SEN YÖNET
+    camera.position.set(0.5, 1.2, 4)
+    camera.lookAt(0, 0, 0)
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
     })
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8))
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(mount.clientWidth, mount.clientHeight)
     renderer.outputColorSpace = THREE.SRGBColorSpace
     mount.appendChild(renderer.domElement)
 
-    const group = new THREE.Group()
-    scene.add(group)
+    const root = new THREE.Group()
+    scene.add(root)
 
-    const ambient = new THREE.AmbientLight('#ffffff', 1)
+    const ambient = new THREE.AmbientLight(0xffffff, 1)
     scene.add(ambient)
 
-    const keyLight = new THREE.DirectionalLight('#ffffff', 3)
-    keyLight.position.set(2.5, 3, 4)
+    const keyLight = new THREE.DirectionalLight(0xffffff, 1)
+    keyLight.position.set(4, 5, 6)
     scene.add(keyLight)
 
-    const fillLight = new THREE.DirectionalLight('#7e1f23', 1)
-    fillLight.position.set(-3, 1.5, 2)
+    const fillLight = new THREE.DirectionalLight(0x6a0d16,2 )
+    fillLight.position.set(-3, 15, 1)
     scene.add(fillLight)
 
-    const rimLight = new THREE.PointLight('#c4181f', 28, 55)
-    rimLight.position.set(-1.8, 1.2, -2.2)
+    const rimLight = new THREE.DirectionalLight(0xb3121b, 5)
+    rimLight.position.set(1, 1, -12)
     scene.add(rimLight)
+
+     const rimLight2 = new THREE.DirectionalLight(0xb3121b, 5)
+    rimLight2.position.set(-2, -1, -3)
+    scene.add(rimLight2)
 
     let raven = null
     let mixer = null
+    let frameId = null
 
+    const clock = new THREE.Clock()
     const loader = new GLTFLoader()
+
     loader.load(
       '/models/raven.glb',
       (gltf) => {
         raven = gltf.scene
 
-        raven.scale.set(1, 1, 1)
-        raven.position.set(0, -1.05, 0)
-        raven.rotation.y = 1.0
+        const box = new THREE.Box3().setFromObject(raven)
+        const center = box.getCenter(new THREE.Vector3())
+        const size = box.getSize(new THREE.Vector3())
+        const maxDim = Math.max(size.x, size.y, size.z)
+
+        raven.position.x -= center.x
+        raven.position.y -= center.y
+        raven.position.z -= center.z
+
+        const targetSize = 3.8
+        const scale = targetSize / maxDim
+        raven.scale.setScalar(scale)
+
+        raven.position.y = -0.2
+        raven.position.x = 0.5
+        raven.rotation.y = 1
 
         raven.traverse((child) => {
           if (child.isMesh) {
             child.castShadow = false
             child.receiveShadow = false
 
-            if (child.material) {
-              child.material.envMapIntensity = 1.1
-
-              if (child.material.color) {
-                const hex = `#${child.material.color.getHexString()}`
-                if (hex === '#ffffff' || hex === '#cccccc' || hex === '#999999') {
-                  child.material.color = new THREE.Color('#161010')
-                }
-              }
-            }
+           
           }
         })
 
-        group.add(raven)
+        root.add(raven)
 
         if (gltf.animations && gltf.animations.length > 0) {
           mixer = new THREE.AnimationMixer(raven)
           const action = mixer.clipAction(gltf.animations[0])
           action.play()
         }
+
+        animate()
       },
       undefined,
       (error) => {
@@ -91,21 +107,17 @@ export default function Scene3D() {
       }
     )
 
-    const clock = new THREE.Clock()
-    let frameId
-
     const animate = () => {
       frameId = requestAnimationFrame(animate)
 
       const elapsed = clock.getElapsedTime()
       const delta = clock.getDelta()
 
-      group.rotation.y = Math.sin(elapsed * 0.45) * 0.18
-      group.position.y = Math.sin(elapsed * 1.1) * 0.08
-
+      root.rotation.y = Math.sin(elapsed * 0.28) * 0.08
+      root.position.y = Math.sin(elapsed * 0.85) * 0.03
 
       if (raven) {
-        raven.rotation.z = Math.sin(elapsed * 0.9) * 0.03
+        raven.rotation.z = Math.sin(elapsed * 0.7) * 0.012
       }
 
       if (mixer) mixer.update(delta)
@@ -113,10 +125,9 @@ export default function Scene3D() {
       renderer.render(scene, camera)
     }
 
-    animate()
-
     const onResize = () => {
       if (!mount) return
+
       camera.aspect = mount.clientWidth / mount.clientHeight
       camera.updateProjectionMatrix()
       renderer.setSize(mount.clientWidth, mount.clientHeight)

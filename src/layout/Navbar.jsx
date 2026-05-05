@@ -16,10 +16,12 @@ export default function Navbar() {
           </div>
         </Link>
         <nav className="nav-links" aria-label="Main navigation">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+         
+        <nav className="nav-links">
+        <a href="#work">Work</a>
+        <a href="#studio">Studio</a>
+        <a href="#contact">Contact</a>
+        </nav>
         </nav>
       </div>
     </header>

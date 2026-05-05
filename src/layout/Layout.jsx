@@ -8,11 +8,15 @@ function Noise() {
 
 export default function Layout({ children }) {
   return (
-    <div className="site-shell">
-      <Noise />
+<>
+  <div className="noise-layer" aria-hidden="true" />
+  <div className="site-shell">
+    <header className="site-header">
       <Navbar />
-      {children}
-      <Footer />
-    </div>
+    </header>
+    {children}
+    <Footer />
+  </div>
+</>
   )
 }
