@@ -46,7 +46,7 @@ export default function Home() {
     <main>
       <section className="hero-section container hero-grid">
         <div className="hero-copy">
-          <p className="eyebrow mono">Layered digital presence for dark-first brands</p>
+          <p className="eyebrow mono">Visual worlds for launches, brands, and ambitious ideas.</p>
           <h1>Dark visuals. Sharp systems. Red signal.</h1>
           <p className="lead">Cinematic sites, 3D motion, and brand visuals for projects that need a darker edge.</p>
           <div className="hero-actions">
@@ -61,14 +61,7 @@ export default function Home() {
         </div>
         <div className="hero-stage">
           <Scene3D />
-          <div className="floating-panel panel-a">
-            <span className="mono small">Signal</span>
-            <strong>Visual tension</strong>
-          </div>
-          <div className="floating-panel panel-b">
-            <span className="mono small">System</span>
-            <strong>Layered depth</strong>
-          </div>
+          
         </div>
       </section>
 

@@ -1,6 +1,6 @@
-
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 export default function Scene3D() {
   const mountRef = useRef(null)
@@ -10,74 +10,141 @@ export default function Scene3D() {
     if (!mount) return
 
     const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(45, mount.clientWidth / mount.clientHeight, 0.1, 100)
-    camera.position.set(0, 0.2, 4.6)
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
+    const camera = new THREE.PerspectiveCamera(
+      38,
+      mount.clientWidth / mount.clientHeight,
+      0.1,
+      100
+    )
+    camera.position.set(0, -1, 6)
+
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+    })
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8))
     renderer.setSize(mount.clientWidth, mount.clientHeight)
+    renderer.outputColorSpace = THREE.SRGBColorSpace
     mount.appendChild(renderer.domElement)
 
     const group = new THREE.Group()
     scene.add(group)
 
-    const geo = new THREE.IcosahedronGeometry(1.15, 1)
-    const mat = new THREE.MeshPhysicalMaterial({
-      color: '#7e1f23',
-      emissive: '#0e0707',
-      metalness: 0.65,
-      roughness: 0.28,
-      clearcoat: 0.9,
-      clearcoatRoughness: 0.18,
-    })
-    const mesh = new THREE.Mesh(geo, mat)
-    group.add(mesh)
+    const ambient = new THREE.AmbientLight('#ffffff', 1)
+    scene.add(ambient)
 
-    const wire = new THREE.LineSegments(
-      new THREE.WireframeGeometry(new THREE.IcosahedronGeometry(1.45, 0)),
-      new THREE.LineBasicMaterial({ color: '#c4181f', transparent: true, opacity: 0.26 })
+    const keyLight = new THREE.DirectionalLight('#ffffff', 3)
+    keyLight.position.set(2.5, 3, 4)
+    scene.add(keyLight)
+
+    const fillLight = new THREE.DirectionalLight('#7e1f23', 1)
+    fillLight.position.set(-3, 1.5, 2)
+    scene.add(fillLight)
+
+    const rimLight = new THREE.PointLight('#c4181f', 28, 55)
+    rimLight.position.set(-1.8, 1.2, -2.2)
+    scene.add(rimLight)
+
+    let raven = null
+    let mixer = null
+
+    const loader = new GLTFLoader()
+    loader.load(
+      '/models/raven.glb',
+      (gltf) => {
+        raven = gltf.scene
+
+        raven.scale.set(1, 1, 1)
+        raven.position.set(0, -1.05, 0)
+        raven.rotation.y = 1.0
+
+        raven.traverse((child) => {
+          if (child.isMesh) {
+            child.castShadow = false
+            child.receiveShadow = false
+
+            if (child.material) {
+              child.material.envMapIntensity = 1.1
+
+              if (child.material.color) {
+                const hex = `#${child.material.color.getHexString()}`
+                if (hex === '#ffffff' || hex === '#cccccc' || hex === '#999999') {
+                  child.material.color = new THREE.Color('#161010')
+                }
+              }
+            }
+          }
+        })
+
+        group.add(raven)
+
+        if (gltf.animations && gltf.animations.length > 0) {
+          mixer = new THREE.AnimationMixer(raven)
+          const action = mixer.clipAction(gltf.animations[0])
+          action.play()
+        }
+      },
+      undefined,
+      (error) => {
+        console.error('Raven model failed to load:', error)
+      }
     )
-    group.add(wire)
 
-    const ring = new THREE.Mesh(
-      new THREE.TorusGeometry(2.0, 0.03, 16, 120),
-      new THREE.MeshBasicMaterial({ color: '#c4181f', transparent: true, opacity: 0.45 })
-    )
-    ring.rotation.x = 1.25
-    scene.add(ring)
+    const clock = new THREE.Clock()
+    let frameId
 
-    const light = new THREE.PointLight('#c4181f', 16, 20)
-    light.position.set(2.4, 2, 3.8)
-    scene.add(light)
-    scene.add(new THREE.AmbientLight('#ffffff', 0.45))
-
-    let frame
     const animate = () => {
-      frame = requestAnimationFrame(animate)
-      mesh.rotation.x += 0.0032
-      mesh.rotation.y += 0.0055
-      wire.rotation.x -= 0.0023
-      wire.rotation.y += 0.0035
-      ring.rotation.z += 0.0025
-      group.position.y = Math.sin(Date.now() * 0.0012) * 0.08
+      frameId = requestAnimationFrame(animate)
+
+      const elapsed = clock.getElapsedTime()
+      const delta = clock.getDelta()
+
+      group.rotation.y = Math.sin(elapsed * 0.45) * 0.18
+      group.position.y = Math.sin(elapsed * 1.1) * 0.08
+
+
+      if (raven) {
+        raven.rotation.z = Math.sin(elapsed * 0.9) * 0.03
+      }
+
+      if (mixer) mixer.update(delta)
+
       renderer.render(scene, camera)
     }
+
     animate()
 
     const onResize = () => {
+      if (!mount) return
       camera.aspect = mount.clientWidth / mount.clientHeight
       camera.updateProjectionMatrix()
       renderer.setSize(mount.clientWidth, mount.clientHeight)
     }
+
     window.addEventListener('resize', onResize)
 
     return () => {
-      cancelAnimationFrame(frame)
+      cancelAnimationFrame(frameId)
       window.removeEventListener('resize', onResize)
+
+      scene.traverse((obj) => {
+        if (obj.geometry) obj.geometry.dispose()
+
+        if (obj.material) {
+          if (Array.isArray(obj.material)) {
+            obj.material.forEach((mat) => mat.dispose())
+          } else {
+            obj.material.dispose()
+          }
+        }
+      })
+
       renderer.dispose()
-      geo.dispose()
-      mat.dispose()
-      mount.removeChild(renderer.domElement)
+
+      if (mount.contains(renderer.domElement)) {
+        mount.removeChild(renderer.domElement)
+      }
     }
   }, [])
 
