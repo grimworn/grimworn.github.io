@@ -47,16 +47,15 @@ export default function Home() {
       <section className="hero-section container hero-grid">
         <div className="hero-copy">
           <p className="eyebrow mono">Visual worlds for launches, brands, and ambitious ideas.</p>
-          <h1>Dark visuals. Sharp systems. Red signal.</h1>
-          <p className="lead">Cinematic sites, 3D motion, and brand visuals for projects that need a darker edge.</p>
+          <h1>We shape ideas into motion.</h1>
+          <p className="lead">Grimworn develops animations, motion systems, and brand visuals for launches,
+    campaigns, and ideas that need to look clear, distinctive, and professionally built.</p>
           <div className="hero-actions">
-            <Link to="/work" className="btn btn-primary">View case studies</Link>
-            <Link to="/services" className="btn btn-secondary">See capabilities</Link>
           </div>
           <div className="hero-meta">
-            <span>Multi-page structure</span>
-            <span>3D hero detail</span>
-            <span>Crimson accent system</span>
+            <span>3D animation</span>
+            <span>Motion design</span>
+            <span>Visual direction</span>
           </div>
         </div>
         <div className="hero-stage">
@@ -67,57 +66,17 @@ export default function Home() {
 
       <section className="container stacked-band">
         <article className="band large">
-          <span className="mono small">Structure</span>
-          <h2>More than one screen. More than one mood.</h2>
-          <p>This version breaks the experience into dedicated routes so the brand can breathe: overview, services, work, story, and contact.</p>
+          <span className="mono small">Approach</span>
+          <h2>Good motion starts before animation.</h2>
+          <p>Strong visual work comes from clear thinking: references, timing,
+      composition, and form all need to align before the final frame does.</p>
         </article>
         <article className="band accent">
-          <span className="mono small">Direction</span>
-          <h3>Red, not green.</h3>
-          <p>Crimson highlights, wine-dark layers, ember glows, and steel surfaces tuned for a darker editorial look.</p>
+          <span className="mono small">Focus</span>
+          <h3>Built to communicate, not just decorate.</h3>
+          <p>The goal is not to make things look busy. It is to create motion and visuals
+      that carry an idea clearly and leave a stronger impression.</p>
         </article>
-      </section>
-
-      <section className="container section-grid">
-        <div className="section-copy">
-          <p className="eyebrow mono">Capabilities</p>
-          <h2>Not a generic agency stack. A tighter studio offering.</h2>
-        </div>
-        <div className="card-grid three">
-          {services.map(service => (
-            <article className="info-card" key={service.title}>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
-              <ul>
-                {service.points.map(item => <li key={item}>{item}</li>)}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="container section-grid pull-up">
-        <div className="section-copy split-title">
-          <div>
-            <p className="eyebrow mono">Selected work</p>
-            <h2>Projects framed like releases, not thumbnails.</h2>
-          </div>
-          <Link className="inline-link" to="/work">Open work archive <i className="ri-arrow-right-up-line"></i></Link>
-        </div>
-        <div className="project-stack">
-          {projects.map(project => (
-            <Link to="/work" className="project-row" key={project.slug}>
-              <div>
-                <span className="mono small">{project.type}</span>
-                <h3>{project.title}</h3>
-                <p>{project.summary}</p>
-              </div>
-              <div className="project-thumb" aria-hidden="true">
-                <div className="thumb-core" />
-              </div>
-            </Link>
-          ))}
-        </div>
       </section>
     </main>
   )

@@ -3,19 +3,19 @@ import PageShell from '../components/PageShell'
 
 const services = [
   {
-    title: 'Creative Direction',
-    text: 'Narrative systems for launches, channels, and premium creator brands that need a sharper point of view.',
-    points: ['Moodboards & references', 'Art direction', 'Launch visuals'],
+    title: '3D Animation',
+    text: 'Designed sequences, product visuals, and stylized motion built with attention to form, lighting, and timing.',
+    points: ['Product films', 'Loop scenes', 'Animated visuals'],
   },
   {
-    title: '3D Motion Systems',
-    text: 'Dark cinematic sequences, product scenes, logo reveals, and stylized environments with controlled tension.',
-    points: ['3D loops', 'Hero scenes', 'Motion packages'],
+    title: 'Motion Design',
+    text: 'Titles, transitions, and motion systems that give campaigns, content, and launches a clearer visual rhythm.',
+    points: ['Title sequences', 'Promos', 'Motion systems'],
   },
   {
-    title: 'Edit & Packaging',
-    text: 'Tighter edits, stronger intros, title systems, overlays, and visual pacing designed for social-native attention.',
-    points: ['Short-form edits', 'Title design', 'Episode packaging'],
+    title: 'Art Direction',
+    text: 'References, visual development, and aesthetic decisions that shape a more coherent final result from the start.',
+    points: ['Look development', 'Frame direction', 'Visual consistency'],
   },
 ]
 
@@ -33,11 +33,7 @@ export default function Services() {
             </div>
           </article>
         ))}
-        <article className="detail-card accent-card tall">
-          <span className="mono small">3D layer</span>
-          <h3>3D can live inside the site.</h3>
-          <p>Lightweight canvas elements, ambient objects, or hero-driven scene fragments can exist directly in the browser without turning the site into a gimmick.</p>
-        </article>
+      
       </div>
     </PageShell>
   )
