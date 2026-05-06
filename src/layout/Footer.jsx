@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <p className="eyebrow mono">Grimworn Creative</p>
-            <p>Motion design, CGI visuals, and campaign films.</p>
+            <p>Motion design, 3D animation, and product visualization.</p>
           </div>
 
           <div className="footer-links">
@@ -20,7 +20,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>(c) {year} Grimworn</span>
-          <span>Make the thing worth watching.</span>
+          <span>Make the frame worth remembering.</span>
         </div>
       </div>
     </footer>

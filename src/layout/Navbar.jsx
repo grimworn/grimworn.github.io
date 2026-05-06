@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
-  const scrollToTop = () => {
+  const scrollToTop = (event) => {
+    event.preventDefault()
     closeMenu()
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-  const announcement = 'Founding offer: free collaboration spots for selected launch films, CGI visuals, and motion-led brand pieces.'
+  const announcement = 'Selective studio slots for motion design, 3D animation, and product visualization briefs.'
 
   return (
     <header className="site-header">
@@ -28,21 +28,20 @@ export default function Navbar() {
         </div>
       </div>
       <div className="container nav-wrap">
-        <Link to="/" className="brand" onClick={scrollToTop}>
-          <svg className="brand-mark" viewBox="0 0 64 64" aria-label="Grimworn logo" fill="none">
-            <path d="M12 44L32 10L52 44L32 34L12 44Z" stroke="currentColor" strokeWidth="3" />
-            <path d="M24 36L32 22L40 36" stroke="currentColor" strokeWidth="3" />
-          </svg>
+        <a href="/" className="brand" onClick={scrollToTop}>
+          <span className="brand-mark" aria-hidden="true">
+            <img src="/img/grimworn_logo.png" alt="" />
+          </span>
 
           <div className="brand-copy">
             <strong>GRIMWORN</strong>
             <span className="brand-top mono">CREATIVE</span>
           </div>
-        </Link>
+        </a>
 
         <nav className="nav-links" aria-label="Main navigation">
           <a href="#work">Work</a>
-          <a href="#studio">Studio</a>
+          <a href="#studio">Process</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -62,7 +61,7 @@ export default function Navbar() {
       <div id="mobile-menu" className={`mobile-menu ${menuOpen ? 'is-open' : ''}`}>
         <nav className="mobile-nav" aria-label="Mobile navigation">
           <a href="#work" onClick={closeMenu}>Work</a>
-          <a href="#studio" onClick={closeMenu}>Studio</a>
+          <a href="#studio" onClick={closeMenu}>Process</a>
           <a href="#contact" onClick={closeMenu}>Contact</a>
         </nav>
       </div>
