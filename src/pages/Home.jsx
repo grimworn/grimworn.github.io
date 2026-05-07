@@ -8,12 +8,11 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow mono">Motion design, 3D animation, product visuals</p>
           <h1>
-            <span>Against the grain.</span>
-            <span>On purpose.</span>
+            <span>We build the motion</span>
+            <span>against the flow.</span>
           </h1>
           <p className="lead">
-            Grimworn is a creative studio shaping cinematic motion, 3D animation, and product visuals for brands that need a sharper presence on screen.
-          </p>
+Grimworn is a creative studio building cinematic motion, 3D animation, and product visuals for brands moving against the flow.          </p>
           <div className="hero-meta">
             <span>Motion design</span>
             <span>3D animation</span>
@@ -29,7 +28,7 @@ export default function Home() {
         <div className="work-shell">
           <div className="section-box work-box">
             <div className="work-head">
-              <h2 className="work-title">Work</h2>
+              <h3 className="work-title">Work</h3>
               <p className="work-copy">
                 Selected motion and 3D work built around timing, texture, and product presence.
               </p>

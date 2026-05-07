@@ -427,7 +427,7 @@ p{color:var(--muted);line-height:1.65}
 }
 .work-title{
   margin:0;
-  font-size:clamp(2.4rem,5vw,4.5rem);
+  font-size:clamp(2rem,2.5vw,3rem);
   line-height:.95;
   letter-spacing:-.04em;
   color:var(--text);
