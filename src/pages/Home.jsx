@@ -12,7 +12,8 @@ export default function Home() {
             <span>against the flow.</span>
           </h1>
           <p className="lead">
-Grimworn is a creative studio building cinematic motion, 3D animation, and product visuals for brands moving against the flow.          </p>
+            Grimworn is a creative studio building cinematic motion, 3D animation, and product visuals for brands moving against the flow.
+          </p>
           <div className="hero-meta">
             <span>Motion design</span>
             <span>3D animation</span>

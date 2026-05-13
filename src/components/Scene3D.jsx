@@ -19,7 +19,7 @@ export default function Scene3D() {
     )
 
     // Manual camera control. Keep this stable across breakpoints.
-    camera.position.set(0.5,1, 4.5)
+    camera.position.set(0.45, 0.9, 4.8)
     camera.lookAt(-0.5, 0, 0)
 
     const renderer = new THREE.WebGLRenderer({
@@ -34,22 +34,22 @@ export default function Scene3D() {
     const root = new THREE.Group()
     scene.add(root)
 
-    const ambient = new THREE.AmbientLight(0xffffff, 1)
+    const ambient = new THREE.AmbientLight(0xf7efe5, 0.82)
     scene.add(ambient)
 
-    const keyLight = new THREE.DirectionalLight(0xffffff, 1)
+    const keyLight = new THREE.DirectionalLight(0xfff4e4, 1.15)
     keyLight.position.set(4, 5, 6)
     scene.add(keyLight)
 
-    const fillLight = new THREE.DirectionalLight(0x6a0d16,2 )
-    fillLight.position.set(-3, 15, 1)
+    const fillLight = new THREE.DirectionalLight(0x5a151c, 0.75)
+    fillLight.position.set(-3, 10, 1)
     scene.add(fillLight)
 
-    const rimLight = new THREE.DirectionalLight(0xb3121b, 5)
+    const rimLight = new THREE.DirectionalLight(0xad2121, 2.25)
     rimLight.position.set(1, 1, -12)
     scene.add(rimLight)
 
-     const rimLight2 = new THREE.DirectionalLight(0xb3121b, 5)
+    const rimLight2 = new THREE.DirectionalLight(0xad2121, 0.7)
     rimLight2.position.set(-2, -1, -2)
     scene.add(rimLight2)
 
@@ -74,7 +74,7 @@ export default function Scene3D() {
         raven.position.y -= center.y
         raven.position.z -= center.z
 
-        const targetSize = 3.8
+        const targetSize = 3.55
         const scale = targetSize / maxDim
         raven.scale.setScalar(scale)
 
