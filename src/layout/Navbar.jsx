@@ -9,24 +9,27 @@ export default function Navbar() {
     closeMenu()
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-  const announcement = 'Selective studio slots for motion design, 3D animation, and product visualization briefs.'
-
   return (
     <header className="site-header">
-      <div className="announce-bar" aria-label={announcement}>
-        <div className="announce-track" aria-hidden="true">
-          <div className="announce-group">
-            <span>{announcement}</span>
-            <span>{announcement}</span>
-            <span>{announcement}</span>
+      <div className="announce-bar" aria-label="Studio announcements">
+        <div className="announce-track">
+          <div className="announce-group" aria-hidden="true">
+            <span>Motion design</span>
+            <span>3D animation</span>
+            <span>Product visuals</span>
+            <span>Creative direction</span>
+            <span>Against the flow</span>
           </div>
-          <div className="announce-group">
-            <span>{announcement}</span>
-            <span>{announcement}</span>
-            <span>{announcement}</span>
+          <div className="announce-group" aria-hidden="true">
+            <span>Motion design</span>
+            <span>3D animation</span>
+            <span>Product visuals</span>
+            <span>Creative direction</span>
+            <span>Against the flow</span>
           </div>
         </div>
       </div>
+
       <div className="container nav-wrap">
         <a href="/" className="brand" onClick={scrollToTop}>
           <span className="brand-mark" aria-hidden="true">
@@ -41,8 +44,12 @@ export default function Navbar() {
 
         <nav className="nav-links" aria-label="Main navigation">
           <a href="#work">Work</a>
-          <a href="#studio">Process</a>
+          <p className="eyebrow mono">|</p>
+          <a href="#studio">Process </a>
+          <p className="eyebrow mono">|</p>
+
           <a href="#contact">Contact</a>
+
         </nav>
 
         <button

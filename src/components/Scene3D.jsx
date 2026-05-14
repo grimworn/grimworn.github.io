@@ -18,9 +18,9 @@ export default function Scene3D() {
       100
     )
 
-    // Manual camera control. Keep this stable across breakpoints.
-    camera.position.set(0.45, 0.9, 4.8)
-    camera.lookAt(-0.5, 0, 0)
+    // Portrait crop: keep the raven framed from the shoulders up.
+    camera.position.set(0.1, -1, 4)
+    camera.lookAt(-0.7, -0.1, -3)
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -34,22 +34,22 @@ export default function Scene3D() {
     const root = new THREE.Group()
     scene.add(root)
 
-    const ambient = new THREE.AmbientLight(0xf7efe5, 0.82)
+    const ambient = new THREE.AmbientLight(0x000000, 0.82)
     scene.add(ambient)
 
     const keyLight = new THREE.DirectionalLight(0xfff4e4, 1.15)
     keyLight.position.set(4, 5, 6)
     scene.add(keyLight)
 
-    const fillLight = new THREE.DirectionalLight(0x5a151c, 0.75)
+    const fillLight = new THREE.DirectionalLight(0xd8d8d8, 0.48)
     fillLight.position.set(-3, 10, 1)
     scene.add(fillLight)
 
-    const rimLight = new THREE.DirectionalLight(0xad2121, 2.25)
+    const rimLight = new THREE.DirectionalLight(0x000000, 1.65)
     rimLight.position.set(1, 1, -12)
     scene.add(rimLight)
 
-    const rimLight2 = new THREE.DirectionalLight(0xad2121, 0.7)
+    const rimLight2 = new THREE.DirectionalLight(0xc51d18, 0.38)
     rimLight2.position.set(-2, -1, -2)
     scene.add(rimLight2)
 
@@ -74,13 +74,13 @@ export default function Scene3D() {
         raven.position.y -= center.y
         raven.position.z -= center.z
 
-        const targetSize = 3.55
+        const targetSize = 2.45
         const scale = targetSize / maxDim
         raven.scale.setScalar(scale)
 
-        raven.position.y = -0.2
-        raven.position.x = 0
-        raven.rotation.y = 1
+        raven.position.y = -0.98
+        raven.position.x = -0.04
+        raven.rotation.y = 0.72
 
         raven.traverse((child) => {
           if (child.isMesh) {
