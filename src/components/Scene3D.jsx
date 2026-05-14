@@ -20,7 +20,7 @@ export default function Scene3D() {
 
     // Portrait crop: keep the raven framed from the shoulders up.
     camera.position.set(0.1, -1, 4)
-    camera.lookAt(-0.7, -0.1, -3)
+    camera.lookAt(-0.9, -0.1, -3)
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,

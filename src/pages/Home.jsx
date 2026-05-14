@@ -7,7 +7,6 @@ export default function Home() {
         <div className="hero-spotlight" aria-hidden="true" />
         <div className="hero-copy">
           <div className="hero-eyebrow">
-            <span className="eyebrow-line" />
             <p className="eyebrow mono">Motion design, 3D animation, product visuals</p>
           </div>
           <h1 className="hero-title">
@@ -24,7 +23,7 @@ export default function Home() {
               </span>
               <span className="hero-title-line">
                 <span>the</span>
-                <span className="wind-word">flow.</span>
+                <span className="wind-word">flow</span>           
               </span>
             </span>
             <span className="hero-title-mobile">
@@ -33,7 +32,7 @@ export default function Home() {
                 <span className="wind-word-2">motion</span>
               </span>
               <span className="hero-title-line">
-                <span>against the</span>
+                <span>against tahe</span>
                 <span className="wind-word">flow.</span>
               </span>
             </span>
@@ -42,10 +41,7 @@ export default function Home() {
           <p className="lead">
             Grimworn is a creative studio building cinematic motion, 3D animation, and product visuals for brands moving against the flow.
           </p>
-          <div className="hero-actions">
-            <a className="button-primary" href="#work">View work</a>
-            <a className="button-secondary" href="mailto:hello@grimworn.com">Start a brief</a>
-          </div>
+       
         </div>
 
         <div className="hero-decoration" aria-hidden="true">
@@ -113,8 +109,7 @@ export default function Home() {
             <span className="section-index mono">04 / Contact</span>
             <h2>CONTACT</h2>
             <p>
-              Send the product, the mood, and the moment people should remember. We will shape a clear path for motion, 3D, or product visualization that can be produced with care.
-            </p>
+Tell us about your project, launch, or upcoming campaign. From Türkiye, we work with brands and teams worldwide to create cinematic visuals, product films, and motion-led brand stories.            </p>
           </div>
 
           <a className="contact-mainlink" href="mailto:hello@grimworn.com">
