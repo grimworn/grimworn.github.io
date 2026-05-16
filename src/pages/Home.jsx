@@ -61,14 +61,22 @@ export default function Home() {
             <a className="work-card work-card-feature" href="#">
               <div className="work-media work-media--video">
                 <video autoPlay muted loop playsInline preload="metadata" controls={false}>
+                  <source src="/videos/NOUVA_1R.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div className="work-card-content">
+                <h3>NOUVA CORE</h3>
+              </div>
+            </a>
+
+            <a className="work-card work-card-feature" href="#">
+              <div className="work-media work-media--video">
+                <video autoPlay muted loop playsInline preload="metadata" controls={false}>
                   <source src="/videos/koffdark.mp4" type="video/mp4" />
                 </video>
               </div>
               <div className="work-card-content">
-                <span className="work-index mono">01</span>
-                <span className="eyebrow mono">Latest work</span>
                 <h3>KOFFDARK</h3>
-                <p>A recent dark motion piece built around atmosphere, contrast, and controlled product presence.</p>
               </div>
             </a>
           </div>
@@ -81,10 +89,10 @@ export default function Home() {
             <span className="section-index mono"></span>
             <h2>PROCESS</h2>
             <p>
-              Grimworn works where motion design, 3D animation, and product visualization meet. Every piece is built with controlled pacing, tactile detail, and a clear reason for every frame.
+              Grimworn works where motion design, 3D animation, and product visualization meet.<br></br> Every piece is built with controlled pacing, tactile detail, and a clear reason for every frame.
             </p>
             <p className="fine-print">
-              AI Notice: We do not promise instant AI output or machine-made shortcuts. The work is built through traditional craft, careful iteration, and the time needed for motion, light, and product detail to feel intentional.
+              AI Notice: We do not promise instant AI output or machine-made shortcuts.<br></br> The work is built through traditional craft, careful iteration, and the time needed for motion, light, and product detail to feel intentional.
             </p>
           </div>
 
@@ -106,13 +114,13 @@ export default function Home() {
       <section id="contact" className="contact-section">
         <div className="section-shell contact-layout">
           <div className="section-head">
-            <span className="section-index mono">04 / Contact</span>
+            <span className="section-index mono"></span>
             <h2>CONTACT</h2>
             <p>
-Tell us about your project, launch, or upcoming campaign. From Türkiye, we work with brands and teams worldwide to create cinematic visuals, product films, and motion-led brand stories.            </p>
+Tell us about your project, launch, or upcoming campaign. <br></br> From Türkiye, we work with brands and teams worldwide.        </p>
           </div>
 
-          <a className="contact-mainlink" href="mailto:hello@grimworn.com">
+          <a className="contact-mainlink" href="mailto:studio@grimworn.com">
             studio@grimworn.com
             <span>Start a brief</span>
           </a>

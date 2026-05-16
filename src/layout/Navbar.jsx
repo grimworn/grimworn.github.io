@@ -14,18 +14,16 @@ export default function Navbar() {
       <div className="announce-bar" aria-label="Studio announcements">
         <div className="announce-track">
           <div className="announce-group" aria-hidden="true">
-            <span>Motion design</span>
-            <span>3D animation</span>
-            <span>Product visuals</span>
-            <span>Creative direction</span>
-            <span>Against the flow</span>
+            <span>For a limited time, we are offering free work for companies</span>
+            <span>For a limited time, we are offering free work for companies</span>
+            <span>For a limited time, we are offering free work for companies</span>
+            <span>For a limited time, we are offering free work for companies</span>
           </div>
           <div className="announce-group" aria-hidden="true">
-            <span>Motion design</span>
-            <span>3D animation</span>
-            <span>Product visuals</span>
-            <span>Creative direction</span>
-            <span>Against the flow</span>
+            <span>For a limited time, we are offering free work for companies</span>
+            <span>For a limited time, we are offering free work for companies</span>
+            <span>For a limited time, we are offering free work for companies</span>
+            <span>For a limited time, we are offering free work for companies</span>
           </div>
         </div>
       </div>
