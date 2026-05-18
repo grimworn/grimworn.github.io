@@ -351,6 +351,16 @@ h1,h2,h3{
   margin-bottom:1.65rem;
   font-size:clamp(1rem,1.6vw,1.2rem);
 }
+.hero-mobile-strip{
+  display:none;
+}
+.hero-mobile-strip img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  object-position:center;
+}
 .hero-actions{
   display:flex;
   flex-wrap:wrap;
@@ -549,7 +559,7 @@ h1,h2,h3{
 .work-card-feature{
   display:grid;
   grid-template-columns:1fr;
-  min-height:22rem;
+  min-height:0;
 }
 .work-media{background:#050505;overflow:hidden}
 .work-media--video{aspect-ratio:16/9}
@@ -562,13 +572,18 @@ h1,h2,h3{
 .work-card-small{
   display:flex;
   flex-direction:column;
-  justify-content:flex-end;
+  justify-content:flex-start;
   gap:.65rem;
-  padding:1.35rem;
+  padding:.85rem .35rem 0;
 }
-.work-card-content{border-top:1px solid var(--border)}
+.work-card-content{
+  border-top:0;
+  background:transparent;
+  align-items:center;
+  text-align:center;
+}
 .work-card h3{
-  font-size:clamp(1.6rem,3.5vw,3.2rem);
+  font-size:clamp(1.25rem,2.6vw,2.25rem);
 }
 .work-card p{font-size:.9rem}
 
@@ -722,7 +737,7 @@ h1,h2,h3{
   .process-grid,
   .contact-layout{grid-template-columns:1fr}
   .work-card-feature{grid-template-columns:1fr}
-  .work-card-content{border-left:0;border-top:1px solid var(--border)}
+  .work-card-content{border-left:0;border-top:0}
   .contact-mainlink{width:min(100%,30rem)}
   .card-grid.three,
   .case-grid,
@@ -774,6 +789,12 @@ h1,h2,h3{
   .hero-title-desktop{display:none}
   .hero-title-mobile{display:block}
   .lead{font-size:.96rem}
+  .hero-mobile-strip{
+    display:block;
+    width:100%;
+    margin-top:1.35rem;
+    overflow:hidden;
+  }
   .hero-decoration{
     display:none;
   }

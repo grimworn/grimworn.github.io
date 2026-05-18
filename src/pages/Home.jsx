@@ -41,6 +41,9 @@ export default function Home() {
           <p className="lead">
             Grimworn is a creative studio building cinematic motion, 3D animation, and product visuals for brands moving against the flow.
           </p>
+          <div className="hero-mobile-strip" aria-hidden="true">
+            <img src="/img/gw_mobile_hero.png" alt="" loading="eager" />
+          </div>
        
         </div>
 
@@ -96,18 +99,6 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="process-grid">
-            <article className="process-card">
-              <span className="mono">01</span>
-              <h3>Intent</h3>
-              <p>We begin with what the product or brand needs people to notice, feel, and remember.</p>
-            </article>
-            <article className="process-card">
-              <span className="mono">02</span>
-              <h3>Motion & 3D</h3>
-              <p>The final work is shaped to hold its identity across screens, formats, and moments.</p>
-            </article>
-          </div>
         </div>
       </section>
 
